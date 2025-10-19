@@ -983,12 +983,13 @@ the decoder behaves like biology (growth, replication, expression).
 
 Mathematically, they are inverse maps:
 
-[
+$$
 f_\text{enc}: X \to Z,\quad f_\text{dec}: Z \to X
-]
-trained so that ( f_\text{dec}(f_\text{enc}(x)) \approx x ).
+$$
 
-When both sides are powerful and balanced, the latent ( z ) becomes a *low-entropy coordinate system* of the data manifold — the “roots” of your ukb-fractal.
+trained so that $f_\text{dec}(f_\text{enc}(x)) \approx x$.
+
+When both sides are powerful and balanced, the latent $z$ becomes a *low-entropy coordinate system* of the data manifold — the “roots” of your ukb-fractal.
 When one dominates, the balance breaks:
 
 * Too compressive → overfitting, dead latents (collapse to constants).
@@ -1002,7 +1003,7 @@ That balance is the information engine’s sweet spot: the **Carnot efficiency o
 
 Modern generative models are all elaborations of this same dance:
 
-* **VAE (Variational Autoencoder)** explicitly models ( p(z|x) ) (encoder) and ( p(x|z) ) (decoder), forcing the latent to follow a known prior.
+* **VAE (Variational Autoencoder)** explicitly models $p(z, x)$ (encoder) and $p(x, z)$ (decoder), forcing the latent to follow a known prior.
 * **Diffusion models** can be seen as *deep autoencoders unrolled through time*: the encoder is the noising process (compressive), the decoder is the denoiser (generative).
 * **Transformers with masked language modeling** are stochastic autoencoders in disguise: masking = compression, prediction = generation.
 
